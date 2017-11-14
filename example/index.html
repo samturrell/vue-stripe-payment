@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Stripe Payment example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+  <div id="app" v-cloak>
+    <div class="container">
+      <h1>vue-stripe-payment example</h1>
+      <form>
+        <div class="form-group">
+          <label>Card number</label>
+          <input class="form-control" v-payment:formatCardNumber>
+        </div>
+        <div class="form-group">
+          <label>Card Expiry</label>
+          <input class="form-control" v-payment:formatCardExpiry>
+        </div>
+        <div class="form-group">
+          <label>Card CVC</label>
+          <input class="form-control" v-payment:formatCardCVC>
+        </div>
+        <div class="form-group">
+          <label>Numeric input</label>
+          <input class="form-control" v-payment:restrictNumeric>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"
+    integrity="sha256-C6USxZcxxFo9Wm1p3PFcYgEVpHQqRegQ0dgGc8rlR4o="
+    crossorigin="anonymous"
+  ></script>
+  <script src="../dist/vue-stripe-payment.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+    });
+  </script>
+</body>
+</html>
